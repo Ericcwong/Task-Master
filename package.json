@@ -1,0 +1,19 @@
+{
+  "name": "task-master",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ericcwong/Task-Master.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ericcwong/Task-Master/issues"
+  },
+  "homepage": "https://github.com/Ericcwong/Task-Master#readme"
+}
