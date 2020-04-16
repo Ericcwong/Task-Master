@@ -1,7 +1,7 @@
 const express = require("express");
 
 const mongoose = require("mongoose");
-const routes = require("./routes");
+// const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -16,9 +16,8 @@ if (process.env.NODE_ENV === "production") {
 //Add routes HERE
 
 // Connect to the Mongo DB
-//(Insert MongoDB HERE)
-
+mongoose.connect(process.env.MONGODB_URI || "mongodb://project3:password1@ds113736.mlab.com:13736/heroku_96zb71pm");
 // Start the API server
 app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on http://localhost${PORT}`);
+  console.log(`🌎  ==> API Server now listening on http://localhost:${PORT}`);
 });
