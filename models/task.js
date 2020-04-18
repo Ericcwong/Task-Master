@@ -1,13 +1,12 @@
-// const mongoose = require("mongoose");
-// const Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-// const bookSchema = new Schema({
-//   title: { type: String, required: true },
-//   author: { type: String, required: true },
-//   synopsis: String,
-//   date: { type: Date, default: Date.now }
-// });
+const taskSchema = new Schema({
+  title: { type: String, required: true },
+  complete: {type: Boolean, default: false},
+  date: { type: Date, default: Date.now }
+});
 
-// const Book = mongoose.model("Book", bookSchema);
+const Task = mongoose.model("Task", taskSchema);
 
-// module.exports = Book;
+module.exports = Task;
