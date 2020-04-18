@@ -50,6 +50,15 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://project3:password1@ds113736.mlab.com:13736/heroku_96zb71pm",
+{
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+},
+() => console.log("Connected to MongoDB!")
+);
+
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on http://localhost:${PORT}`);
