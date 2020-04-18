@@ -8,6 +8,10 @@ const ProjectSchema = new Schema({
     type: String,
     required: true
   },
+  tasks: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'task'
+  }],
   owner: {
     type: Object,
     required: true
