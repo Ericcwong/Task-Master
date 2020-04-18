@@ -1,4 +1,6 @@
-// module.exports = {
-//     Book: require("./book")
-//   };
+module.exports = {
+    User: require("./User"),
+    Task: require("./Task"),
+    Project: require("./Project")
+  };
   
