@@ -1,13 +1,29 @@
-// const mongoose = require("mongoose");
-// const Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-// const bookSchema = new Schema({
-//   title: { type: String, required: true },
-//   author: { type: String, required: true },
-//   synopsis: String,
-//   date: { type: Date, default: Date.now }
-// });
-
-// const Book = mongoose.model("Book", bookSchema);
-
-// module.exports = Book;
+// Create Schema
+const UserSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  email: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  password: {
+    type: String,
+    validate: [
+      ({ length }) => length >= 8,
+      "Password should be at least 8 characters."
+    ],
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
+});
+module.exports = User = mongoose.model("users", UserSchema);
