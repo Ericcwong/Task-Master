@@ -1,3 +1,4 @@
+// Dependencies
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -5,7 +6,9 @@ const passport = require("passport");
 const path = require("path");
 require("dotenv").config();
 const cors = require("cors");
+// File calls
 const users = require("./routes/api/users");
+const character = require("./routes/api/characters");
 //const projects = require("./routes/api/projects");
 //const tasks = require("./routes/api/tasks");
 const app = express();
@@ -37,6 +40,7 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
+app.use("/api/character", character);
 //app.use("/api/tasks", tasks);
 //app.use("/api/projects", projects);
 
