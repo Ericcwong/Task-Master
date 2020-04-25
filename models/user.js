@@ -24,6 +24,10 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  character:{
+    type: Schema.Types.ObjectId,
+    ref: "Character"
+  },
   project:{
     type: Schema.Types.ObjectId,
     ref: "project"
