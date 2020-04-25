@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const TaskSchema = new Schema({
-  project: {
+  projects: {
     type: Schema.Types.ObjectId,
-    ref: "projects",
+    ref: "project",
     required: true
   },
   taskName: {
