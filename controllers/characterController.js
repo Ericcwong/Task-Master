@@ -1,4 +1,4 @@
-const db = require("../models/character");
+const db = require("../models");
 
 // Defining methods for the Character Controller
 module.exports = {
