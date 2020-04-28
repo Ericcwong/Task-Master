@@ -18,6 +18,7 @@ import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import NotFound from "./components/404/404";
+import BattlePage from "./components/pages/BattlePage"
 
 // Style
 import "./App.scss";
@@ -56,6 +57,7 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/battle" component={BattlePage} />
               <Route
                 component={localStorage.jwtTokenTeams ? Dashboard : NotFound}
               />
