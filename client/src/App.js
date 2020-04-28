@@ -12,7 +12,7 @@ import store from "./store";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 
 // Components
-import Landing from "./components/layout/Landing";
+import Landing from "./components/pages/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
