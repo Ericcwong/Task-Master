@@ -8,9 +8,7 @@ require("dotenv").config();
 const cors = require("cors");
 // File calls
 const users = require("./routes/api/users");
-const character = require("./routes/api/characters");
-//const projects = require("./routes/api/projects");
-//const tasks = require("./routes/api/tasks");
+const routes = require("./routes")
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -40,7 +38,7 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
-app.use("/api/character", character);
+app.use(routes);
 //app.use("/api/tasks", tasks);
 //app.use("/api/projects", projects);
 

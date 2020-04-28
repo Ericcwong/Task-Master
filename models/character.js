@@ -41,7 +41,8 @@ const CharacterSchema = new Schema({
       default: Date.now
     },
     lastActiveAt: {
-      type: Date
+      type: Date,
+      default: Date.now
     }
 });
 

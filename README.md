@@ -4,8 +4,8 @@
 
  <img src ="readme/images/githubLogo.png"> Julie Theriault <a href ="https://github.com/JulieT2319">Github</a><br>
  <img src ="readme/images/githubLogo.png"> Dan Degeare <a href ="https://github.com/DanDukes">Github</a><br>
-<img src ="readme/images/githubLogo.png"> Eric Wong <a href ="https://github.com/Ericcwong/">Github</a><br>
-<img src ="readme/images/githubLogo.png"> Dalton Earl <a href ="https://github.com/Dalton-Earl">Github</a><br>
+ <img src ="readme/images/githubLogo.png"> Eric Wong <a href ="https://github.com/Ericcwong/">Github</a><br>
+ <img src ="readme/images/githubLogo.png"> Dalton Earl <a href ="https://github.com/Dalton-Earl">Github</a><br>
  <img src ="readme/images/githubLogo.png"> Tyler Phothirath <a href ="https://github.com/tylerphopho">Github</a>
 
 # Dependencies used
@@ -22,3 +22,4 @@ Backend
 <li>If-env</li>
 
 # Resources
+Trello <a href = "https://developer.atlassian.com/cloud/trello/rest/">Link </a>
