@@ -9,7 +9,7 @@ class Navbar extends Component {
             Task Master
             </Link>
           <ul className="right">
-            <li><Link className="red waves-effect waves-light btn">Logout</Link></li>
+            <li><Link to="/" className="red waves-effect waves-light btn">Logout</Link></li>
           </ul>
         </div>
       </nav>
