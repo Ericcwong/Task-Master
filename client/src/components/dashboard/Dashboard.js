@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-//import Navbar from "../layout/Navbar";
+// import Navbar from "../layout/Navbar";
 class Dashboard extends Component {
   onLogoutClick = e => {
     e.preventDefault();
@@ -13,15 +13,25 @@ class Dashboard extends Component {
     return (
       <div style={{ height: "75vh" }} className="container valign-wrapper">
         <div className="row">
-          <div className="col s12 center-align">
-            <h4>
+          <div className="col 14 m3 s12">
+            <div className="card">
+              <div className="card-image">
+                <img src=""></img>
+                <span className="card-title black-text">{user.name.split(" ")[0]}</span>
+                <a className="btn green accent-4 btn-floating halfway-fab pulse activator">+</a>
+              </div>
+              <div className="card-content blue darken-3">
+                <p className="white-text">?stats</p>
+              </div>
+            </div>
+            {/* <h4>
               <b>Hey there,</b> {user.name.split(" ")[0]}
               <p className="flow-text grey-text text-darken-1">
                 Welcome to <span style={{ fontFamily: "monospace" }}>TASK</span>{" "}
                 master 👏
               </p>
-            </h4>
-            <button
+            </h4> */}
+            {/* <button
               style={{
                 width: "150px",
                 borderRadius: "3px",
@@ -32,11 +42,12 @@ class Dashboard extends Component {
               className="btn btn-large waves-effect waves-light hoverable blue accent-3"
             >
               Logout
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
     );
+    
   }
 }
 Dashboard.propTypes = {
