@@ -8,6 +8,14 @@ class BattlePage extends Component {
         <Navbar />
         <div className="container valign-wrapper">
           <div className="row">
+            <div className="col s12 battle">
+
+            </div>
+          </div>
+          <div className="row">
+            <div className="col s12">
+
+            </div>
           </div>
         </div>
       </div>
