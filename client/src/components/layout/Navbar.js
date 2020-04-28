@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./navbar.css";
 class Navbar extends Component {
   render() {
     return (
       <nav className="">
-        <div className="nav-wrapper blue darken-4 center-align">
+        <div className="nav-wrapper blue darken-4 left-padding">
           <Link to="/" className="brand-logo white-text">
             Task Master
             </Link>
