@@ -19,6 +19,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import NotFound from "./components/404/404";
 import BattlePage from "./components/pages/BattlePage"
+import UserCard from "./components/cards/UserCard"
 
 // Style
 import "./App.scss";
@@ -58,6 +59,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <Route exact path="/battle" component={BattlePage} />
+              <Route exact path="/player" component={UserCard} />
               <Route
                 component={localStorage.jwtTokenTeams ? Dashboard : NotFound}
               />
