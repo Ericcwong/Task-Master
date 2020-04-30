@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import UsersCard from "../UsersCard.js"
-//import Navbar from "../layout/Navbar";
+// import UserCard from "../UserCard.js"
+// import Navbar from "../layout/Navbar";
 class Dashboard extends Component {
   onLogoutClick = e => {
     e.preventDefault();
@@ -37,7 +37,6 @@ class Dashboard extends Component {
           </div>
         </div>
       </div>
-      // <UsersCard />
     );
   }
 }
