@@ -9,7 +9,7 @@ class Battle extends Component {
     return (
       <div className="row battle rounded">
         <div className="col s12 center-align">
-          <img src={Boss} className="img-fluid" alt="boss sprite" />
+          <img src={Boss} className="responsive-img" alt="boss sprite" />
         </div>
         <div className="row center-align">
           {
