@@ -1,0 +1,6 @@
+.battle {
+  background-image: url(./battle-background.jpg);
+  background-color: rgb(3, 3, 109);
+  background-position: center;
+  border-radius: 20px;
+}
