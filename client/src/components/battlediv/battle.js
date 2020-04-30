@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import "./battle.css";
 import Boss from "./boss-image.png";
-
+import { battleActions } from "../../utils/battleActionsDummy";
 import Battleaction from "../battleactions/battleaction";
 class Battle extends Component {
   render() {
@@ -12,7 +12,15 @@ class Battle extends Component {
           <img src={Boss} className="img-fluid" alt="boss sprite" />
         </div>
         <div className="row center-align">
-          <Battleaction />
+          {
+            battleActions.map(action =>
+              <Battleaction
+                classes={action.classes}
+                action={action.action}
+              />
+            )
+          }
+
         </div>
 
 
