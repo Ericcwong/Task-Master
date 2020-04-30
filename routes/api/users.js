@@ -104,6 +104,13 @@ router
     .get(userController.findById)
     .put(userController.update)
     .delete(userController.remove);
-
+router
+  .route("/:userId/projects")
+  .get(userController.getUserProject)
+  .post(userController.createUserProject)
+router
+  .route("/:userId/characters")
+  .get(userController.getUserCharacter)
+  .post(userController.createUserCharacter)
 
 module.exports = router;

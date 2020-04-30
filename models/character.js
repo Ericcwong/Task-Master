@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const CharacterSchema = new Schema({
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "users"
+    },
     name: {
       type: String, 
       require: true,
@@ -46,4 +50,4 @@ const CharacterSchema = new Schema({
     }
 });
 
-module.exports = Character = mongoose.model("characters", CharacterSchema)
+module.exports = Character = mongoose.model("character", CharacterSchema)
