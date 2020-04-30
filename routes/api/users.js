@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
-
+const userController = require("../../controllers/userController");
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
@@ -94,5 +94,16 @@ router.post("/login", (req, res) => {
     });
   });
 });
+
+router.route("/")
+    .get(userController.findAll)
+    .post(userController.create);
+
+router
+    .route("/:id")
+    .get(userController.findById)
+    .put(userController.update)
+    .delete(userController.remove);
+
 
 module.exports = router;

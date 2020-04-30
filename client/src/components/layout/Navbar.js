@@ -1,23 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./navbar.css";
 class Navbar extends Component {
   render() {
     return (
-      <div className="navbar-fixed">
-        <nav className="z-depth-0">
-          <div className="nav-wrapper white">
-            <Link
-              to="/"
-              style={{
-                fontFamily: "monospace"
-              }}
-              className="col s5 brand-logo center black-text"
-            >
-              Task Master
+      <nav className="">
+        <div className="nav-wrapper blue darken-4 left-padding">
+          <Link to="/" className="brand-logo white-text">
+            Task Master
             </Link>
-          </div>
-        </nav>
-      </div>
+          <ul className="right">
+            <li><Link to="/" className="red waves-effect waves-light btn">Logout</Link></li>
+          </ul>
+        </div>
+      </nav>
+
+
     );
   }
 }
