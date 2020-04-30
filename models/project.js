@@ -8,22 +8,19 @@ const ProjectSchema = new Schema({
     type: String,
     required: true
   },
-  tasks: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'task'
-  }],
+  // tasks: [{
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'task'
+  // }],
   owner: {
-    type: Object,
+    type: Schema.Types.ObjectId,
+    ref: "users",
     required: true
   },
   teamMembers: [
     {
-      email: {
-        type: String
-      },
-      name: {
-        type: String
-      }
+      type: Schema.Types.ObjectId,
+      ref: "users"
     }
   ],
   date: {
@@ -32,5 +29,5 @@ const ProjectSchema = new Schema({
   }
 });
 
-module.exports = Project = mongoose.model("projects", ProjectSchema);
+module.exports = Project = mongoose.model("project", ProjectSchema);
 

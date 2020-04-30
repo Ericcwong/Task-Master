@@ -24,14 +24,14 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  character:{
+  characters:[{
     type: Schema.Types.ObjectId,
-    ref: "Character"
-  },
-  project:{
+    ref: "character"
+  }],
+  projects:[{
     type: Schema.Types.ObjectId,
     ref: "project"
-  }
+  }]
 });
 
 module.exports = User = mongoose.model("users", UserSchema);
