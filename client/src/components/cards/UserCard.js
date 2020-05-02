@@ -22,16 +22,34 @@ export default class  UserCard extends Component {
             </div>
 
             <ul className="collapsible">
+              <li>
               <div className="collapsible-header"><h4>Character 1</h4></div>
-              <li className="collapsible-body"><span>Stats</span></li>
+              <div className="collapsible-body"><span>Stats</span></div>
+              </li>
             </ul>
             <ul className="collapsible">
+            <li>
               <div className="collapsible-header"><h4>Character 2</h4></div>
-              <li className="collapsible-body"><span>Stats</span></li>
+              <div className="collapsible-body"><span>Stats</span></div>
+              </li>
             </ul>
             <ul className="collapsible">
+            <li>
               <div className="collapsible-header"><h4>Character 3</h4></div>
-              <li className="collapsible-body"><span>Stats</span></li>
+              <div className="collapsible-body"><span>Stats</span></div>
+              </li>
+            </ul>
+            <ul className="collapsible">
+            <li>
+              <div className="collapsible-header"><h4>Character 4</h4></div>
+              <div className="collapsible-body"><span>Stats</span></div>
+              </li>
+            </ul>
+            <ul className="collapsible">
+            <li>
+              <div className="collapsible-header"><h4>Character 5</h4></div>
+              <div className="collapsible-body"><span>Stats</span></div>
+              </li>
             </ul>
             </div>
             <div className="col s6">
