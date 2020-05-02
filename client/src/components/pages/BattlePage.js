@@ -10,11 +10,7 @@ class BattlePage extends Component {
 
           <div className="container">
             <Battle />
-            <div className="row">
-              <div className="col s12">
 
-              </div>
-            </div>
           </div>
         </div>
       </div>
