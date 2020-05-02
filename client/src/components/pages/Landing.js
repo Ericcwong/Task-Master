@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./landing.css";
 class Landing extends Component {
   render() {
     return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
+      <div className="container valign-wrapper bg1">
         <div className="row">
           <div className="col s12 center-align">
             <h4>
-              <b>Track</b> your budgets, goals, and{" "}
-              <span style={{ fontFamily: "monospace" }}>Tasks</span>
+              <b>Track</b> your <span style={{ fontFamily: "monospace" }}>Tasks</span>
             </h4>
-            <p className="flow-text grey-text text-darken-1">
+            <p className="flow-text black-text text-darken-4">
               Keep yourself on task with interactive games based on your
               progress.
             </p>
@@ -36,7 +36,7 @@ class Landing extends Component {
                   borderRadius: "3px",
                   letterSpacing: "1.5px"
                 }}
-                className="btn btn-large btn-flat waves-effect white black-text"
+                className="btn btn-large waves-effect waves-light hoverable green"
               >
                 Log In
               </Link>
