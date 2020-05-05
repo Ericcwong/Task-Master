@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const TaskSchema = new Schema({
-  projects: {
+  project: {
     type: Schema.Types.ObjectId,
     ref: "project",
     required: true
@@ -25,5 +25,5 @@ const TaskSchema = new Schema({
   }
 });
 
-module.exports = Task = mongoose.model("tasks", TaskSchema);
+module.exports = Task = mongoose.model("task", TaskSchema);
 

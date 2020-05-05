@@ -94,23 +94,32 @@ router.post("/login", (req, res) => {
     });
   });
 });
-
+//Root
 router.route("/")
     .get(userController.findAll)
     .post(userController.create);
-
+//Deleting and updating by ID
 router
     .route("/:id")
     .get(userController.findById)
     .put(userController.update)
     .delete(userController.remove);
+//Adds projects to user's projects array
 router
   .route("/:userId/projects")
   .get(userController.getUserProject)
   .post(userController.createUserProject)
+//Adds characters to user's characters array
 router
   .route("/:userId/characters")
   .get(userController.getUserCharacter)
   .post(userController.createUserCharacter)
-
+//
+//
+//  The DELETE aspect for both character and projects are done 
+//   by going to http:localhost:3001/api/characters/:charactersID (FILE: routes/api/characters.js) 
+//    OR
+//     http:localhost:3001/api/projects/:projectsID (FILE: routes/api/projects.js)
+//      This way it removes the character or project off the users arrays and the database
+//
 module.exports = router;
