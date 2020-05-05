@@ -1,21 +1,24 @@
 import React, { Component } from "react";
 import Statbar from "../statsbar/statsbar"
-import { battleActions } from "../../utils/battleActionsDummy";
+import { character } from "../../utils/battleDummyCharacter";
 class Player extends Component {
   render() {
     return (
       <div>
-        <h3>USER NAME</h3>
-        {battleActions.map(stat =>
-          <Statbar
-            color={stat.color}
-            statValue={stat.statValue}
-            statName={stat.statName}
-          />
+        <img src={character.avatar} className="responsive-img" alt={character.name + " sprite"} />
+        <h3>{character.name}</h3>
+        {
+          character.actions.map(stat =>
+            <Statbar
+              color={stat.color}
+              statValue={stat.statValue}
+              statName={stat.statName}
+            />
 
-        )}
+          )
+        }
 
-      </div>
+      </div >
     );
   }
 }

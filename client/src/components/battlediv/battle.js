@@ -2,9 +2,11 @@
 import React, { Component } from "react";
 import "./battle.css";
 import Boss from "./boss-image.png";
-import { battleActions } from "../../utils/battleActionsDummy";
+import { character } from "../../utils/battleDummyCharacter";
 import Battleaction from "../battleactions/battleaction";
 import Player from "../playerinfo/playerinfo";
+
+let battleActions = character.actions
 class Battle extends Component {
   render() {
     return (
