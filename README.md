@@ -9,17 +9,35 @@
  <img src ="readme/images/githubLogo.png"> Tyler Phothirath <a href ="https://github.com/tylerphopho">Github</a>
 
 # Dependencies used
+
 Frontend
 <li>Axios</li>
+<li>Classnames</li>
+<li>Jwt-decode</li>
+<li>Materialize-css</li>
+<li>React-redux</li>
 <li>react-router-dom</li>
-<li>Trello</li>
+<li>Redux</li>
+<li>Redux-thunk</li>
 
 
 Backend
 <li>Axios</li>
+<li>Bcryptjs</li>
+<li>Body-parser</li>
+<li>Concurrently</li>
+<li>Cors</li>
+<li>Dotenv</li>
 <li>Express</li>
-<li>Mongoose</li>
 <li>If-env</li>
+<li>Is-empty</li>
+<li>Jsonwebtoken</li>
+<li>Mongoose</li>
+<li>Node-sass</li>
+<li>Passport</li>
+<li>Passport-jwt</li>
+<li>Validator</li>
+
 
 # Resources
 Trello <a href = "https://developer.atlassian.com/cloud/trello/rest/">Link </a>

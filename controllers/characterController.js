@@ -27,11 +27,13 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  remove: function(req, res) {
-    db.Character
-      .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  remove: async function(req, res) {
+    const character = await db.Character.findById({_id: req.params.id});
+    const userId = character.user;
+    const user = await db.User.findById(userId);
+    await character.remove();
+    user.characters.pull(character)
+    await user.save();
+    res.status(200).json( {success: true});
   }
 };

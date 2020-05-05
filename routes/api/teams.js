@@ -10,5 +10,8 @@ router
     .get(teamController.findById)
     .put(teamController.update)
     .delete(teamController.remove);
-    
+// router
+//     .route("/:teamId/users")
+//     // .get(teamController.getUser)
+//     .post(teamController.createTeamMember)
 module.exports = router;
