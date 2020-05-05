@@ -1,0 +1,19 @@
+.bg1 {
+  background-image: url(./background-image.jpg);
+  background-color: rgb(120, 224, 135);
+  background-size: cover;
+  height: 100vh;
+}
+
+.transparent-75{
+  opacity: .75;
+}
+.opaque{
+  opacity: 1;
+}
+.round-edge{
+  border-radius: 1em;
+}
+#root {
+  background-color: rgb(192, 203, 192);
+}
