@@ -44,6 +44,9 @@ module.exports = {
     await user.save()
     res.status(200).json(newProject);
   },
+  // removeUserProject: async (req, res) => {
+  //   const { projectId } = 
+  // },
   getUserCharacter: async (req, res) => {
     const { userId } = req.params;
     // awaits to find User by id and populate the characters within the user
@@ -67,6 +70,14 @@ module.exports = {
     await user.save()
     res.status(200).json(newCharacter);
   },
+  // removeUserCharacter: function(req, res){
+  //   db.User.characters
+  //   .findById({ _id: req.params.id })
+  //   .then(dbModel => dbModel.remove())
+  //   .then(dbModel => res.json(dbModel))
+  //   .catch(err => res.status(422).json(err));
+  
+  // },
   update: function(req, res) {
     db.User
       .findOneAndUpdate({ _id: req.params.id }, req.body)
