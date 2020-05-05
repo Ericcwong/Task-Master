@@ -5,7 +5,7 @@ class Player extends Component {
   render() {
     return (
       <div>
-        <img src={character.avatar} className="responsive-img" alt={character.name + " sprite"} />
+        <img src={character.avatar} className="responsive-img max-100px" alt={character.name + " sprite"} />
         <h3>{character.name}</h3>
         {
           character.actions.map(stat =>
