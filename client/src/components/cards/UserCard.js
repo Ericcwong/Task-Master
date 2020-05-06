@@ -16,11 +16,6 @@ export default class  UserCard extends Component {
       <div>
         <Navbar />
         <div className="container">
-          <div className="row">
-            <div className="col s6">
-            <div className="collection with-header center blue darken-4">
-              <h3 className="white-text">User Information Header</h3>
-            </div>
             <ul className="collapsible">
               <li>
               <div className="collapsible-header"><h4>Character 1</h4></div>
@@ -28,14 +23,7 @@ export default class  UserCard extends Component {
               </li>
             </ul>
             </div>
-            <div className="col s6">
-            <div className="collection with-header center blue darken-4">
-              <h3 className="white-text">Boss Header</h3>
-            </div>
-            </div>
           </div>
-        </div>
-      </div>
     );
   }
 }
