@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Navbar from "../layout/Navbar";
-import CreateTodo from "../tasks/CreateTodo"
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
 

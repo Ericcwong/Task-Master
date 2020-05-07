@@ -7,6 +7,8 @@ import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
 import axios from "axios";
 import UserCard from "../cards/UserCard"
+import BossCard from "../cards/BossCard";
+import AddCharacter from "../cards/AddCharacter";
 
 class Dashboard extends Component {
   
@@ -23,6 +25,7 @@ class Dashboard extends Component {
       this.setState({character: data, loading: false})
       console.log(data);
   }
+  
   // characters(id){
 
   // }
@@ -38,6 +41,7 @@ class Dashboard extends Component {
       <div>
         <Navbar />
         <div className="container">
+          <AddCharacter />
           <div className="row">
             <div className="col s6">
               <div className="collection with-header center blue darken-4">
@@ -54,6 +58,9 @@ class Dashboard extends Component {
               </div>}
               
 
+            </div>
+            <div className="col s6">
+              <BossCard />
             </div>
           </div>
         </div>​
