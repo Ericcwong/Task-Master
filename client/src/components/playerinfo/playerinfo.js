@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Statbar from "../statsbar/statsbar"
-import { battleActions } from "../../utils/battleActionsDummy";
-
 
 class Player extends Component {
   constructor(){
@@ -19,17 +17,20 @@ class Player extends Component {
   render() {
     return (
       <div>
-        <h3>USER NAME</h3>
-        {battleActions.map(stat =>
-          <Statbar
-            color={stat.color}
-            statValue={stat.statValue}
-            statName={stat.statName}
-          />
+        <img src={this.props.character.avatar} className="responsive-img" alt={this.props.character.name + " sprite"} />
+        <h3>{this.props.character.name}</h3>
+        {
+          this.props.character.actions.map(stat =>
+            <Statbar
+              color={stat.color}
+              statValue={stat.statValue}
+              statName={stat.statName}
+            />
 
-        )}
+          )
+        }
 
-      </div>
+      </div >
     );
   }
 }

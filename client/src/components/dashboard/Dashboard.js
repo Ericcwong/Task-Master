@@ -31,10 +31,9 @@ class Dashboard extends Component {
     this.props.logoutUser();
   };
   render() {
+
     const { user } = this.props.auth;
-    let chars = user.id
-    console.log("/api/user/"+chars+"/characters")
-    console.log(chars)
+
     return (
       <div>
         <Navbar />
@@ -44,6 +43,7 @@ class Dashboard extends Component {
               <div className="collection with-header center blue darken-4">
                 <h3 className="white-text">{user.name.split(" ")[0]}'s Characters</h3>
               </div>
+
               {/* If no character is able to be pulled in, says loading till character is able to be pulled */}
               {this.state.loading || !this.state.character ? <div>Loading... Please Wait</div> : 
                 <div>
@@ -58,6 +58,7 @@ class Dashboard extends Component {
           </div>
         </div>​
       </div>
+
     );
   }
 }
