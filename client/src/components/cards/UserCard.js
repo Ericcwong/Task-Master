@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Navbar from "../layout/Navbar";
+import CreateTodo from "../tasks/CreateTodo"
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
 
@@ -15,18 +16,14 @@ export default class  UserCard extends Component {
       <div>
         <Navbar />
         <div className="container">
-          <div className="row">
-            <div className="col s6">
             <ul className="collapsible">
               <li>
               <div className="collapsible-header"><h4>Character 1</h4></div>
-              <div className="collapsible-body"><span>Stats</span></div>
+              <div className="collapsible-body"><span><CreateTodo/></span></div>
               </li>
             </ul>
-            </div>  
+            </div>
           </div>
-        </div>
-      </div>
     );
   }
 }
