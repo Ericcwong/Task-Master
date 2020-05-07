@@ -7,6 +7,7 @@ import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
 import axios from "axios";
 import UserCard from "../cards/UserCard"
+import { trelloAuth } from "../../actions/trelloActions";
 
 class Dashboard extends Component {
 
@@ -16,6 +17,7 @@ class Dashboard extends Component {
   };
   async componentDidMount() {
     const { user } = this.props.auth;
+    trelloAuth();
     let characters = user.id
     const url = "/api/user/" + characters + "/characters";
     const response = await fetch(url);
