@@ -17,7 +17,7 @@ class Battleaction extends Component {
 
   render() {
     return (
-      <button className={this.props.classes} onClick={this.performAction()} data-action={this.props.action}>{this.props.action}</button>
+      <button className={this.props.classes} onClick={this.performAction} data-action={this.props.action}>{this.props.action}</button>
     );
   }
 }
