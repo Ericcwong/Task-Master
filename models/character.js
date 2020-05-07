@@ -29,7 +29,7 @@ const CharacterSchema = new Schema({
       require: true,
       trim: true
     },
-    manastat: {
+    manaStat: {
       type: Number, 
       require: true,
       trim: true
