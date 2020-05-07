@@ -33,9 +33,6 @@ class Dashboard extends Component {
   render() {
 
     const { user } = this.props.auth;
-    let chars = user.id
-    console.log("/api/user/" + chars + "/characters")
-    console.log(chars)
     return (
       <div>
         <Navbar />

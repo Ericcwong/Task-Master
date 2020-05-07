@@ -4,28 +4,6 @@ import CreateTodo from "../tasks/CreateTodo"
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
 
-// export default class  UserCard extends Component {
-//   componentDidMount(){
-//     document.addEventListener('DOMContentLoaded', function() {
-//         var elems = document.querySelectorAll('.collapsible');
-//         var instances = M.Collapsible.init(elems, {});
-//       });
-//     }
-//   render() {
-//     return(
-//       <div>
-//           <div className="row">
-//             <ul className="collapsible">
-//               <h5>
-//               <div className="collapsible-header"><h4>Character 1</h4></div>
-//               <div className="collapsible-body"><span>Stats</span></div>
-//               </h5>
-//             </ul>
-//           </div>
-//         </div>
-//     );
-//   }
-// }
 export default function UserCard(props) {
   document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.collapsible');
@@ -60,21 +38,3 @@ export default function UserCard(props) {
   );
 }
 
-{/* <div>
-{props.CardData.map((props, index) =>{
-  return(
-    <div className="container">
-      <ul className="collapsible">
-        <h5>
-          <div className="collapsible-header"><h4>{props.name}</h4></div>
-          <div className="body">
-            <span><CreateTodo/></span>
-            <span>{props.classes}</span>
-
-          </div>
-        </h5>
-      </ul>
-      </div>
-  )
-})}
-</div> */}
