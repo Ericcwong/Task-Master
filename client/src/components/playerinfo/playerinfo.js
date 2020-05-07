@@ -1,7 +1,21 @@
 import React, { Component } from "react";
+import axios from "axios";
 import Statbar from "../statsbar/statsbar"
 import { battleActions } from "../../utils/battleActionsDummy";
+
+
 class Player extends Component {
+  constructor(){
+    super();
+    this.state= {
+      character: []
+    }
+  }
+  componentDidMount(){
+    fetch("/api/user/5e9b3687abbfda0ed043cc58/characters")
+      .then(res => res.json())
+      .then(character => this.setState({character}, () => console.log("Character being pulled: ", character)))
+  }
   render() {
     return (
       <div>
