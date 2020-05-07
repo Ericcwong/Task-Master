@@ -21,19 +21,31 @@ export default class AddCharacter extends Component {
   };
   handleFormSubmit = (event, props) => {
     event.preventDefault();
-    const newCharacter = {
-      name: this.state.name,
-      avatar: this.state.avatar,
-      classes: this.state.classes,
-      healthStat: this.state.healthStat,
-      manaStat: this.state.manaStat,
-      attackStat: this.state.attackStat,
-    };
-    console.log(newCharacter);
-    axios.post(
-      "http://localhost:3001/api/user/" + this.props.userId + "/characters",
-      newCharacter
-    );
+    if (this.state.name === "") {
+      alert("Please enter a name.");
+      return;
+    } else if (this.state.avatar === "") {
+      alert("Please choose an avatar.");
+      return;
+    } else if (this.state.classes === "") {
+      alert("Please choose a class.");
+      return;
+    } else {
+      alert("Character added!");
+      const newCharacter = {
+        name: this.state.name,
+        avatar: this.state.avatar,
+        classes: this.state.classes,
+        healthStat: this.state.healthStat,
+        manaStat: this.state.manaStat,
+        attackStat: this.state.attackStat,
+      };
+      console.log(newCharacter);
+      axios.post(
+        "http://localhost:3001/api/user/" + this.props.userId + "/characters",
+        newCharacter
+      );
+    }
   };
   render() {
     return (
@@ -64,7 +76,15 @@ export default class AddCharacter extends Component {
             type="text"
             placeholder="Class"
           />
-          <button onClick={this.handleFormSubmit}>Submit</button>
+          {/* <button onClick={this.handleFormSubmit}>Submit</button> */}
+          <button
+            className="btn blue darken-4"
+            onClick={this.handleFormSubmit}
+            name="action"
+          >
+            Submit
+            <i className="material-icons right">send</i>
+          </button>
         </form>
       </Collapsible>
     );

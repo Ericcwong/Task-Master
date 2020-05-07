@@ -29,6 +29,7 @@ export default function UserCard(props) {
               <h5>Health: {props.healthStat}</h5>
               <h5>Mana: {props.manaStat}</h5>
               <h5>Attack Damage: {props.attackStat}</h5>
+              <button></button>
             </div>
           </div>
         );
