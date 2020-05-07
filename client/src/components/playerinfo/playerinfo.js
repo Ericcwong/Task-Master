@@ -4,7 +4,7 @@ class Player extends Component {
   render() {
     return (
       <div>
-        <img src={this.props.character.avatar} className="responsive-img max-100px" alt={character.name + " sprite"} />
+        <img src={this.props.character.avatar} className="responsive-img" alt={this.props.character.name + " sprite"} />
         <h3>{this.props.character.name}</h3>
         {
           this.props.character.actions.map(stat =>

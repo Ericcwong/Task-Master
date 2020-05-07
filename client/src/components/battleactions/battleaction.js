@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 
 class Battleaction extends Component {
+
+
   render() {
     return (
-      <p className={this.props.classes}>{this.props.action}</p>
+      <button className={this.props.classes}>{this.props.action}</button>
     );
   }
 }
