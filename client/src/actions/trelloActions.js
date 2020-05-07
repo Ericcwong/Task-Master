@@ -1,3 +1,7 @@
 import axios from "axios";
-import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 
+
+export const getBoards = (req, res) =>{
+    axios
+    .get("api/trello/boards")
+}
