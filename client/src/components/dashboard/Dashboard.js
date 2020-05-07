@@ -7,18 +7,25 @@ import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
 import axios from "axios";
 import UserCard from "../cards/UserCard"
-// import { character } from "../../utils/battleDummyCharacter";
 
 class Dashboard extends Component {
 
-  componentDidMount() {
-    document.addEventListener('DOMContentLoaded', function () {
-      var elems = document.querySelectorAll('.collapsible');
-      var instances = M.Collapsible.init(elems, {});
-    });
-
+  state = {
+    loading: true,
+    character: null
+  };
+  async componentDidMount() {
+    const { user } = this.props.auth;
+    let characters = user.id
+    const url = "/api/user/" + characters + "/characters";
+    const response = await fetch(url);
+    const data = await response.json()
+    this.setState({ character: data, loading: false })
+    console.log(data);
   }
+  // characters(id){
 
+  // }
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
@@ -26,6 +33,9 @@ class Dashboard extends Component {
   render() {
 
     const { user } = this.props.auth;
+    let chars = user.id
+    console.log("/api/user/" + chars + "/characters")
+    console.log(chars)
     return (
       <div>
         <Navbar />
@@ -35,13 +45,20 @@ class Dashboard extends Component {
               <div className="collection with-header center blue darken-4">
                 <h3 className="white-text">{user.name.split(" ")[0]}'s Characters</h3>
               </div>
+              {/* If no character is able to be pulled in, says loading till character is able to be pulled */}
+              {this.state.loading || !this.state.character ? <div>Loading... Please Wait</div> :
+                <div>
+                  <UserCard
+                    CardData={this.state.character}
+                  />
+
+                </div>}
+
 
             </div>
           </div>
         </div>
-
       </div>
-
     );
   }
 }

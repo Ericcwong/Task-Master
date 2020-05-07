@@ -4,26 +4,77 @@ import CreateTodo from "../tasks/CreateTodo"
 import "materialize-css/dist/css/materialize.min.css";
 import M from "materialize-css";
 
-export default class UserCard extends Component {
-  componentDidMount() {
-    document.addEventListener('DOMContentLoaded', function () {
-      var elems = document.querySelectorAll('.collapsible');
-      var instances = M.Collapsible.init(elems, {});
-    });
-  }
-  render() {
-    return (
-      <div>
-        <Navbar />
-        <div className="container">
-          <ul className="collapsible">
-            <li>
-              <div className="collapsible-header"><h4>Character 1</h4></div>
-              <div className="collapsible-body"><span><CreateTodo /></span></div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    );
-  }
+// export default class  UserCard extends Component {
+//   componentDidMount(){
+//     document.addEventListener('DOMContentLoaded', function() {
+//         var elems = document.querySelectorAll('.collapsible');
+//         var instances = M.Collapsible.init(elems, {});
+//       });
+//     }
+//   render() {
+//     return(
+//       <div>
+//           <div className="row">
+//             <ul className="collapsible">
+//               <h5>
+//               <div className="collapsible-header"><h4>Character 1</h4></div>
+//               <div className="collapsible-body"><span>Stats</span></div>
+//               </h5>
+//             </ul>
+//           </div>
+//         </div>
+//     );
+//   }
+// }
+export default function UserCard(props) {
+  document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, {});
+  });
+  return (
+    <div>
+      {props.CardData.map((props, index) => {
+        return (
+          <div className="card">
+            <div className="card-image waves-effect waves-block waves-light">
+              <img className="activator" src="http://via.placeholder.com/640" />
+            </div>
+            <div className="card-content">
+              <span className="card-title activator grey-text text-darken-4">Character: {props.name}<i className="material-icons right">more_vert</i></span>
+
+            </div>
+            <div className="card-reveal">
+              <span className="card-title grey-text text-darken-4">Character:{props.name}<i className="material-icons right">close</i></span>
+
+              <h5>Avatar: {props.avatar}</h5>
+              <h5>Class: {props.classes}</h5>
+              <h5>Health: {props.healthStat}</h5>
+              <h5>Mana: {props.manaStat}</h5>
+              <h5>Attack Damage: {props.attackStat}</h5>
+
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  );
 }
+
+{/* <div>
+{props.CardData.map((props, index) =>{
+  return(
+    <div className="container">
+      <ul className="collapsible">
+        <h5>
+          <div className="collapsible-header"><h4>{props.name}</h4></div>
+          <div className="body">
+            <span><CreateTodo/></span>
+            <span>{props.classes}</span>
+
+          </div>
+        </h5>
+      </ul>
+      </div>
+  )
+})}
+</div> */}
