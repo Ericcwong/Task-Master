@@ -19,9 +19,6 @@ class Dashboard extends Component {
 
   }
 
-  characters = id => {
-    axios.get("/api/user/" + id + "/characters")
-  }
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
@@ -29,7 +26,6 @@ class Dashboard extends Component {
   render() {
 
     const { user } = this.props.auth;
-    let chars = characters(user.id)
     return (
       <div>
         <Navbar />
@@ -39,12 +35,6 @@ class Dashboard extends Component {
               <div className="collection with-header center blue darken-4">
                 <h3 className="white-text">{user.name.split(" ")[0]}'s Characters</h3>
               </div>
-              {
-                chars.map(character =>
-                  <UserCard
-                    name={character.name}
-                  />)
-              }
 
             </div>
           </div>
