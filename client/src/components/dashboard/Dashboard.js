@@ -10,7 +10,7 @@ import AddCharacter from "../cards/AddCharacter"
 import UserCard from "../cards/UserCard"
 
 class Dashboard extends Component {
-  
+
   state = {
     loading: true,
     character: null
@@ -28,6 +28,7 @@ class Dashboard extends Component {
     //Adds character to user
     // export const 
 
+
   }
   // export const addCharacter =() => 
   onLogoutClick = e => {
@@ -37,7 +38,6 @@ class Dashboard extends Component {
   render() {
 
     const { user } = this.props.auth;
-
     return (
       <div>
         <Navbar />
@@ -52,17 +52,18 @@ class Dashboard extends Component {
                 <h3 className="white-text">{user.name.split(" ")[0]}'s Characters</h3>
               </div>
               {/* If no character is able to be pulled in, says loading till character is able to be pulled */}
-              {this.state.loading || !this.state.character ? <div>Loading... Please Wait</div> : 
+              {this.state.loading || !this.state.character ? <div>Loading... Please Wait</div> :
                 <div>
                   <UserCard
                     CardData={this.state.character}
                   />
+
               </div>}
+                </div>}
             </div>
           </div>
-        </div>​
+        </div>
       </div>
-
     );
   }
 }

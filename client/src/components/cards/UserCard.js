@@ -4,8 +4,8 @@ import React from "react";
 import "materialize-css/dist/css/materialize.min.css";
 // import M from "materialize-css";
 
-
 export default function UserCard(props) {
+
   // document.addEventListener('DOMContentLoaded', function() {
   //   var elems = document.querySelectorAll('.collapsible');
   //   // var instances = M.Collapsible.init(elems, {});
@@ -32,8 +32,9 @@ export default function UserCard(props) {
     </div>
   </div>
       )
+
       })}
-  </div>
+    </div>
   );
 }
 
