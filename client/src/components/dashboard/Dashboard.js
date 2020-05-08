@@ -8,6 +8,10 @@ import axios from "axios"
 import AddCharacter from "../cards/AddCharacter";
 import UserCard from "../cards/UserCard";
 class Dashboard extends Component {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 48538cadf05222602094b005093c50a0b92b48c7
   state = {
     loading: true,
     character: [],
@@ -22,6 +26,7 @@ class Dashboard extends Component {
         this.setState({character: res.data,  loading: false})
       })
 
+<<<<<<< HEAD
     // Gets characters from backend
     // const response = await fetch(getURL);
     // const data = await response.json();
@@ -42,6 +47,9 @@ class Dashboard extends Component {
     .then(res => this.getCharacter())
     .catch(err => console.log(err));
     // this.getCharacter();
+=======
+
+>>>>>>> 48538cadf05222602094b005093c50a0b92b48c7
   }
   onLogoutClick = (e) => {
     e.preventDefault();
