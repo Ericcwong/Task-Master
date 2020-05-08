@@ -4,23 +4,44 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Navbar from "../layout/Navbar";
 import "materialize-css/dist/css/materialize.min.css";
+import axios from "axios"
 import AddCharacter from "../cards/AddCharacter";
 import UserCard from "../cards/UserCard";
 class Dashboard extends Component {
   state = {
     loading: true,
-    character: null,
+    character: [],
   };
-  async componentDidMount() {
+   componentDidMount() {
     //Pulls user's id and gets the url from the backend
     const { user } = this.props.auth;
     let userID = user.id;
-    const getURL = "/api/user/" + userID + "/characters";
-    //Gets characters from backend
-    const response = await fetch(getURL);
-    const data = await response.json();
-    this.setState({ character: data, loading: false });
-    console.log(data);
+    axios.get("/api/user/" + userID + "/characters")
+      .then(res => {
+        console.log(res);
+        this.setState({character: res.data,  loading: false})
+      })
+
+    // Gets characters from backend
+    // const response = await fetch(getURL);
+    // const data = await response.json();
+    // this.setState({ character: data, loading: false });
+    // console.log(data);
+  }
+  // componentDidUpdate(){
+  //   const { user } = this.props.auth;
+  //   let userID = user.id;
+  //   axios.get("/api/user/" + userID + "/characters")
+  //     .then(res => {
+  //       console.log(res);
+  //       this.setState({character: res.data,  loading: false})
+  //     })
+  // }
+  deleteCharacter(id){
+    axios.delete("/api/character/"+id)
+    .then(res => this.getCharacter())
+    .catch(err => console.log(err));
+    // this.getCharacter();
   }
   onLogoutClick = (e) => {
     e.preventDefault();
@@ -45,7 +66,8 @@ class Dashboard extends Component {
                 <div>Loading... Please Wait</div>
               ) : (
                 <div>
-                  <UserCard CardData={this.state.character} />
+                  <UserCard 
+                    CardData={this.state.character} />
                 </div>
               )}
             </div>

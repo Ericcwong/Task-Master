@@ -19,7 +19,7 @@ export default class AddCharacter extends Component {
   onChange = (event) => {
     this.setState({ [event.target.id]: event.target.value });
   };
-  handleFormSubmit = (event, props) => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
     if (this.state.name === "") {
       alert("Please enter a name.");
@@ -41,10 +41,13 @@ export default class AddCharacter extends Component {
         attackStat: this.state.attackStat,
       };
       console.log(newCharacter);
-      axios.post(
+      axios
+      .post(
         "http://localhost:3001/api/user/" + this.props.userId + "/characters",
         newCharacter
-      );
+      )
+      axios.get("/api/user/"+ this.props.userId+"/characters")
+
     }
   };
   render() {
