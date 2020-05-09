@@ -12,7 +12,7 @@ export default class UserCard extends Component {
     this.getCharacter();
   }
   getCharacter = async () =>{
-   let data = await Axios.get("/api/user/"+this.props.CardData.user+"/character")
+   let data = await Axios.get("http://localhost:3001/api/user/"+this.props.CardData.user+"/character")
     .then(({data}) => data);
     // this.setState({character: data})
   }
