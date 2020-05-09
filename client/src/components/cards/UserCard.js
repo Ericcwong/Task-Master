@@ -20,6 +20,7 @@ export default class UserCard extends Component {
     API.deleteCharacter(id)
     .then(res => console.log(res))
     .then(alert("deleted Character"))
+    .then(this.props.handler(this.props.CardData.filter(character => character.id = id)))
     .catch(err => console.log(err));
     // this.getCharacter();
   }
