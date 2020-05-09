@@ -50,7 +50,7 @@ require("./config/passport")(passport);
 // Routes
 
 app.use("/api/users", users);
-app.use("/api/trello", trello);
+// app.use("/api/trello", trello);
 app.use(routes);
 //app.use("/api/tasks", tasks);
 //app.use("/api/projects", projects);
