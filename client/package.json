@@ -12,6 +12,7 @@
     "jwt-decode": "^2.2.0",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.13.1",
+    "react-collapsible": "^2.7.0",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
