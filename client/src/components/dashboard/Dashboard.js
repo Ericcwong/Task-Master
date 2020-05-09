@@ -12,7 +12,7 @@ import UserCard from "../cards/UserCard"
 import BossCard from "../cards/BossCard";
 import { Link } from "react-router-dom";
 // import AddCharacter from "../cards/AddCharacter";
-import { trelloAuth } from "../../actions/trelloActions";
+// import { trelloAuth } from "../../actions/trelloActions";
 
 class Dashboard extends Component {
   state = {
@@ -28,13 +28,14 @@ class Dashboard extends Component {
         console.log(res);
         this.setState({ character: res.data, loading: false })
       })
-    trelloAuth();
-    let characters = user.id
-    const url = "/api/user/" + characters + "/characters";
-    const response = fetch(url);
-    const data = response.json()
-    this.setState({ character: data, loading: false })
-    console.log(data);
+    //   trelloAuth();
+    //   let characters = user.id
+    //   const url = "/api/user/" + characters + "/characters";
+    //   const response = fetch(url);
+    //   const data = response.json()
+    //   this.setState({ character: data, loading: false })
+    //   console.log(data);
+    // }
   }
   // characters(id){
 
