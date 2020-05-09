@@ -9,11 +9,11 @@ Over the course of out bootcamp expiriences we decided together that we wanted t
 This project started with us wanting to build a task tracker ourselves and evolved into us attempting to integrate the trello Api into our game. The front end and our mongo Database is set up and working. We have working react components that are making API calls whithin them selves but they are not currently integrated into our Application. 
 
 # Screenshots 
-![login screen](readme\images\LoginPage.png)
-![sign up screen](readme\images\LoginPage2.png)
-![Home and character page](readme\images\CharacterPage.png)
-![Add a character](readme\images\AddCharcterDropDown.png)
-![Boss fight page](readme\images\BossPage.png)
+![login screen](readme/images/LoginPage.png)
+![sign up screen](readme/images/LoginPage2.png)
+![Home and character page](readme/images/CharacterPage.png)
+![Add a character](readme/images/AddCharcterDropDown.png)
+![Boss fight page](readme/images/BossPage.png)
 
 
 
