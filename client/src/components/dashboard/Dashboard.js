@@ -16,7 +16,7 @@ class Dashboard extends Component {
     //Pulls user's id and gets the url from the backend
     const { user } = this.props.auth;
     let userID = user.id;
-    axios.get("/api/user/" + userID + "/characters")
+    axios.get("https://project3-task-master.herokuapp.com/api/user/" + userID + "/characters")
       .then(res => {
         console.log(res);
         this.setState({character: res.data,  loading: false})
