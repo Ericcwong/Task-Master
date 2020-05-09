@@ -25,12 +25,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
-if (process.env.NODE_ENV === "production") {
-  db = process.env.MONGODB_URI;
-} else {
-  // DB Config
-  db = require("./config/keys").mongoURI;
-}
+
+  db = "mongodb://project3:password1@ds113736.mlab.com:13736/heroku_96zb71pm";
+
 // Connect to MongoDB
 mongoose
   .connect(db, {
