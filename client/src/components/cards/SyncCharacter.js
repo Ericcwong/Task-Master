@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./style.css";
 import "materialize-css/dist/css/materialize.min.css";
-import Collapsible from "react-collapsible";
-import TrelloClient, { Trello } from 'react-trello-client'
+import { Trello } from 'react-trello-client'
 
 export default class SyncCharacter extends Component {
   // Setting the component's initial state
@@ -74,8 +73,6 @@ createCharacter(board) {
       return;
     } else {
       alert("Character added!");
-      // axios.get("/api/user/"+ this.props.userId+"/characters")
-
     }
   };
   render() {

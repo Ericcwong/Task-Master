@@ -12,8 +12,7 @@ export const trelloUpdate2 = () => {
   console.log("Success!")
     //Get the users boards
     Trello.get('/members/me/boards/',
-    loadedBoards
-,
+    loadedBoards,
     function() { console.log("Failed to load boards"); }
     );
 };
@@ -23,18 +22,3 @@ export const loadedBoards = function(boards) {
     console.log(e.name, e.id);
   });
 }
-
-
-//   // Login - get user token
-// export const loginUser = userData => dispatch => {
-//     axios
-//       .get("/api/trello/authorize")
-//       .then(res => {
-//         // Save to localStorage
-//         // Set token to localStorage
-//         const { token } = res.data;
-//         localStorage.setItem("jwtToken", token);
-//       })
-//       .catch(err);
-//   };
-

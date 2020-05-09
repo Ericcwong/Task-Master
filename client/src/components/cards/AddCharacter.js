@@ -81,7 +81,6 @@ export default class AddCharacter extends Component {
             type="text"
             placeholder="Class"
           />
-          {/* <button onClick={this.handleFormSubmit}>Submit</button> */}
           <button
             className="btn blue darken-4"
             onClick={this.handleFormSubmit}
