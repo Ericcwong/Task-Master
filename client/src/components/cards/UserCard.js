@@ -12,9 +12,9 @@ export default class UserCard extends Component {
     this.getCharacter();
   }
   getCharacter = async () =>{
-   let data = await Axios.get("https://project3-task-master.herokuapp.com/api/user/"+this.props.CardData.user+"/character")
+   let data = await Axios.get("/api/user/"+this.props.CardData.user+"/character")
     .then(({data}) => data);
-    // this.setState({character: data})
+    this.setState({coureses: data})
   }
   deleteCharacter(id){
     API.deleteCharacter(id)
