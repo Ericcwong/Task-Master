@@ -48,8 +48,6 @@ export default class AddCharacter extends Component {
           "/api/user/" + this.props.userId + "/characters",
           newCharacter
         )
-      // axios.get("/api/user/"+ this.props.userId+"/characters")
-
     }
   };
   render() {

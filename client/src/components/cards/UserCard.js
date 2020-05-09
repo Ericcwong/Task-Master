@@ -11,10 +11,12 @@ export default class UserCard extends Component {
     super(props);
     this.getCharacter();
   }
+
   getCharacter = async () => {
     let data = await Axios.get("/api/user/" + this.props.CardData.user + "/character")
       .then(({ data }) => data);
     // this.setState({character: data})
+
   }
   deleteCharacter(id) {
     API.deleteCharacter(id)
