@@ -17,12 +17,14 @@ const PORT = process.env.PORT || 3001;
 
 // Define middleware here
 app.use(cors());
-app.use(
-  bodyParser.urlencoded({
-    extended: false,
-  })
-);
-app.use(bodyParser.json());
+// app.use(
+//   bodyParser.urlencoded({
+//     extended: false,
+//   })
+// );
+// app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
 let db = require("./config/keys").mongoURI;
 if (process.env.NODE_ENV === "production") {
   db = process.env.MONGODB_URI;
