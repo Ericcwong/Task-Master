@@ -19,7 +19,7 @@ class Dashboard extends Component {
     loading: true,
     character: [],
   };
-  componentDidMount() {
+  async componentDidMount() {
     //Pulls user's id and gets the url from the backend
     const { user } = this.props.auth;
     let userID = user.id;
@@ -35,7 +35,7 @@ class Dashboard extends Component {
     const data = await response.json()
     this.setState({ character: data, loading: false })
     console.log(data);
-  }
+  };
   // characters(id){
 
     // Gets characters from backend
@@ -43,7 +43,6 @@ class Dashboard extends Component {
     // const data = await response.json();
     // this.setState({ character: data, loading: false });
     // console.log(data);
-  }
   // componentDidUpdate(){
   //   const { user } = this.props.auth;
   //   let userID = user.id;

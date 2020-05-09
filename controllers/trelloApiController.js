@@ -1,6 +1,6 @@
 
 // import React,{useState, useEffect} from 'react';
-import axios from "axios";
+const axios = require("axios");
 // const apiKey = 'b6de011598cbb788e6979d7f6424542a'
 // const apiToken = 'e8bba8d08b779e81a24de060abff610356d089db23c672aa0a0ebfc39f8aca7c'
 // const boardId = "5ea10749b00d3a216a24532f"
