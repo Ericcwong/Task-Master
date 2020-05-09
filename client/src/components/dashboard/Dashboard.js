@@ -16,7 +16,6 @@ import { Link } from "react-router-dom";
 import {trelloUpdate} from "../../actions/trelloActions"
 // import AddCharacter from "../cards/AddCharacter";
 
-
 class Dashboard extends Component {
   state = {
     loading: true,

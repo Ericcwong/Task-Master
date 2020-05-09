@@ -44,11 +44,10 @@ export default class AddCharacter extends Component {
       };
       console.log(newCharacter);
       axios
-      .post(
-        "http://localhost:3001/api/user/" + this.props.userId + "/characters",
-        newCharacter
-      ).then(this.props.characters.push(newCharacter))
-      this.props.handler(this.props.characters)
+        .post(
+          "/api/user/" + this.props.userId + "/characters",
+          newCharacter
+        )
       // axios.get("/api/user/"+ this.props.userId+"/characters")
 
     }
