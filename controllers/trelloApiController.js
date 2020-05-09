@@ -230,4 +230,45 @@ export function GetCardById (){
         )
     }
 }
- 
+export function UpdateCardById (){
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [cards, setcards] = useState([]);
+    const [cardId, setCardId] = useState([]);
+    
+
+    useEffect(()=>{
+        axios
+        .put(`https://api.trello.com/1/boards/${boardId}/cards${cardId}?key=${apiKey}&token=${apiToken}`)
+        .then(res =>
+            res.data)
+            .then(
+                (result)=>{
+                    setIsLoaded(true);
+                    setcards(result);
+                },
+                (error)=>{
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+    },[])
+    if(error){
+        return<div>Error: {error.message}</div>
+    }else if(!isLoaded){
+        return<div>loading</div>
+    }else{
+        return(
+            <ul>
+               {cards.map(card=>(
+            <li key={card.all}>
+               <div> {card.name}</div> <div> {card.id}</div>
+               <button onClick={()=> setCardId(card.id)}>Select card</button>
+               </li>
+        ))}
+        {cardId}
+                
+            </ul>
+        )
+    }
+}
