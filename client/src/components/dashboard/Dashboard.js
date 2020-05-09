@@ -6,7 +6,7 @@ import Navbar from "../layout/Navbar";
 import "materialize-css/dist/css/materialize.min.css";
 
 // import M from "materialize-css";
-// import axios from "axios";
+import axios from "axios";
 import AddCharacter from "../cards/AddCharacter"
 import UserCard from "../cards/UserCard"
 import BossCard from "../cards/BossCard";
@@ -80,6 +80,7 @@ class Dashboard extends Component {
               <BossCard />
             </div>
           </div>
+        </div>
         </div>
     );
   }
