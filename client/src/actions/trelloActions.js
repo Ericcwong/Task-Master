@@ -1,7 +1,3 @@
 import axios from "axios";
+import { GET_BOARDS, GET_BOARD, GET_CARDS, GET_CARD, GET_BOARD_MEMBERS } from "./trelloTypes";
 
-
-export const getBoards = (req, res) =>{
-    axios
-    .get("api/trello/boards")
-}
