@@ -31,19 +31,19 @@ class Dashboard extends Component {
     trelloAuth();
     let characters = user.id
     const url = "/api/user/" + characters + "/characters";
-    const response = await fetch(url);
-    const data = await response.json()
+    const response = fetch(url);
+    const data = response.json()
     this.setState({ character: data, loading: false })
     console.log(data);
   }
   // characters(id){
 
-    // Gets characters from backend
-    // const response = await fetch(getURL);
-    // const data = await response.json();
-    // this.setState({ character: data, loading: false });
-    // console.log(data);
-  }
+  // Gets characters from backend
+  // const response = await fetch(getURL);
+  // const data = await response.json();
+  // this.setState({ character: data, loading: false });
+  // console.log(data);
+  // }
   // componentDidUpdate(){
   //   const { user } = this.props.auth;
   //   let userID = user.id;
