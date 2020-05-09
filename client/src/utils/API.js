@@ -9,4 +9,7 @@ export default {
     return axios.delete("/api/character/" + id);
   },
 
+  updateCharacter: function(id) {
+    return axios.put("/api/character/" + id);
+  },
 };

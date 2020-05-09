@@ -3,6 +3,7 @@ import axios from "axios";
 import "./style.css";
 import "materialize-css/dist/css/materialize.min.css";
 import Collapsible from "react-collapsible";
+
 export default class AddCharacter extends Component {
   // Setting the component's initial state
   constructor(props) {
@@ -16,6 +17,7 @@ export default class AddCharacter extends Component {
       attackStat: 25,
     };
   }
+
   onChange = (event) => {
     this.setState({ [event.target.id]: event.target.value });
   };
@@ -45,7 +47,8 @@ export default class AddCharacter extends Component {
       .post(
         "http://localhost:3001/api/user/" + this.props.userId + "/characters",
         newCharacter
-      )
+      ).then(this.props.characters.push(newCharacter))
+      this.props.handler(this.props.characters)
       // axios.get("/api/user/"+ this.props.userId+"/characters")
 
     }

@@ -23,6 +23,15 @@ export default class UserCard extends Component {
     .catch(err => console.log(err));
     // this.getCharacter();
   }
+
+  updateCharacter(id){
+    API.updateCharacter(id)
+    .then(res => console.log(res))
+    .then(alert("updated Character"))
+    .catch(err => console.log(err));
+    // this.getCharacter();
+  }
+
   componentDidMount(){
     this.setState({character: this.props.CardData})
     console.log(this.props.CardData)
@@ -36,7 +45,7 @@ export default class UserCard extends Component {
             <div className="card-image waves-effect waves-block waves-light">
               <img
                 className="activator"
-                src="http://via.placeholder.com/640"
+                src={character.avatar || "http://via.placeholder.com/640" } 
                 alt="test"
               />
             </div>
@@ -48,16 +57,16 @@ export default class UserCard extends Component {
             </div>
             <div className="card-reveal">
               <span className="card-title grey-text text-darken-4">
-                Character:{character.name}
+              Character:<input placeholder={character.name}></input>
                 <i className="material-icons right">close</i>
               </span>
-              <h5>Avatar: {character.avatar}</h5>
-              <h5>Class: {character.classes}</h5>
-              <h5>Health: {character.healthStat}</h5>
-              <h5>Mana: {character.manaStat}</h5>
-              <h5>Attack Damage: {character.attackStat}</h5>
+              Avatar: <input placeholder={character.avatar}></input>
+              Class: <input placeholder={character.classes}></input>
+             <h5>Health: {character.healthStat}</h5>
+             <h5>Mana: {character.manaStat}</h5> 
+            <h5>Attack Damage: {character.attackStat}</h5>  
               <div className="card-action">
-                <button className="btn blue darken-4" name="action">
+                <button className="btn blue darken-4" name="action" onClick={() =>this.updateCharacter(character._id)}>
                   Update
                   <i className="material-icons">update</i>
                 </button>
