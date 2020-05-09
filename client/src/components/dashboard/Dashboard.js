@@ -10,6 +10,7 @@ import axios from "axios";
 import AddCharacter from "../cards/AddCharacter"
 import UserCard from "../cards/UserCard"
 import BossCard from "../cards/BossCard";
+import { Link } from "react-router-dom";
 // import AddCharacter from "../cards/AddCharacter";
 
 class Dashboard extends Component {
@@ -17,14 +18,14 @@ class Dashboard extends Component {
     loading: true,
     character: [],
   };
-   componentDidMount() {
+  componentDidMount() {
     //Pulls user's id and gets the url from the backend
     const { user } = this.props.auth;
     let userID = user.id;
     axios.get("http://localhost:3001/api/user/" + userID + "/characters")
       .then(res => {
         console.log(res);
-        this.setState({character: res.data,  loading: false})
+        this.setState({ character: res.data, loading: false })
       })
 
     // Gets characters from backend
@@ -42,10 +43,10 @@ class Dashboard extends Component {
   //       this.setState({character: res.data,  loading: false})
   //     })
   // }
-  deleteCharacter(id){
-    axios.delete("/api/character/"+id)
-    .then(res => this.getCharacter())
-    .catch(err => console.log(err));
+  deleteCharacter(id) {
+    axios.delete("/api/character/" + id)
+      .then(res => this.getCharacter())
+      .catch(err => console.log(err));
     // this.getCharacter();
   }
   onLogoutClick = (e) => {
@@ -70,18 +71,20 @@ class Dashboard extends Component {
               {this.state.loading || !this.state.character ? (
                 <div>Loading... Please Wait</div>
               ) : (
-                <div>
-                  <UserCard 
-                    CardData={this.state.character} />
-                </div>
-              )}
+                  <div>
+                    <UserCard
+                      CardData={this.state.character} />
+                  </div>
+                )}
             </div>
             <div className="col s6">
               <BossCard />
+              <button className="btn large waves-effect waves-light purple darken-3 white-text "><Link to="/battle">BATTLE!!!</Link></button>
             </div>
+
           </div>
         </div>
-        </div>
+      </div>
     );
   }
 }
