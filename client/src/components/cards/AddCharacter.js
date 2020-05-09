@@ -43,7 +43,7 @@ export default class AddCharacter extends Component {
       console.log(newCharacter);
       axios
       .post(
-        "https://project3-task-master.herokuapp.com/api/user/" + this.props.userId + "/characters",
+        "http://localhost:3001/api/user/" + this.props.userId + "/characters",
         newCharacter
       )
       // axios.get("/api/user/"+ this.props.userId+"/characters")
