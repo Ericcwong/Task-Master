@@ -3,4 +3,3 @@ const TrelloController = require("../../controllers/trelloApiController");
 
 router.route("/")
     .get(TrelloController.getBoards);
-    

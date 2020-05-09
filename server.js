@@ -9,7 +9,10 @@ const cors = require("cors");
 // File calls
 const users = require("./routes/api/users");
 const routes = require("./routes");
+const trello = require("./routes/api/trello");
+const routes = require("./routes")
 const app = express();
+var OAuth = require('oauth').OAuth
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
@@ -44,7 +47,9 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // Routes
+
 app.use("/api/users", users);
+app.use("/api/trello", trello);
 app.use(routes);
 //app.use("/api/tasks", tasks);
 //app.use("/api/projects", projects);
