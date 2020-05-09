@@ -18,7 +18,7 @@ import {trelloUpdate} from "../../actions/trelloActions"
 
 class Dashboard extends Component {
   state = {
-    loading: true,
+    //loading: true,
     character: [],
   };
   componentDidMount() {
@@ -28,7 +28,7 @@ class Dashboard extends Component {
     axios.get("/api/user/" + userID + "/characters")
       .then(res => {
         console.log(res);
-        this.setState({ character: res.data, loading: false })
+        this.setState({ character: res.data})
       })
   }
 

@@ -40,7 +40,7 @@ export default class UserCard extends Component {
   render(){
   return (
     <div>
-      {this.state.character.map((character, index) => {
+      {this.props.CardData.map((character, index) => {
         return (
           <div className="card" key={character._id}>
             <div className="card-image waves-effect waves-block waves-light">
