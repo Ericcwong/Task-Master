@@ -4,9 +4,14 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Navbar from "../layout/Navbar";
 import "materialize-css/dist/css/materialize.min.css";
-import axios from "axios"
-import AddCharacter from "../cards/AddCharacter";
-import UserCard from "../cards/UserCard";
+
+// import M from "materialize-css";
+import axios from "axios";
+import AddCharacter from "../cards/AddCharacter"
+import UserCard from "../cards/UserCard"
+import BossCard from "../cards/BossCard";
+// import AddCharacter from "../cards/AddCharacter";
+
 class Dashboard extends Component {
   state = {
     loading: true,
@@ -16,7 +21,7 @@ class Dashboard extends Component {
     //Pulls user's id and gets the url from the backend
     const { user } = this.props.auth;
     let userID = user.id;
-    axios.get("/api/user/" + userID + "/characters")
+    axios.get("https://project3-task-master.herokuapp.com/api/user/" + userID + "/characters")
       .then(res => {
         console.log(res);
         this.setState({character: res.data,  loading: false})
@@ -71,10 +76,12 @@ class Dashboard extends Component {
                 </div>
               )}
             </div>
+            <div className="col s6">
+              <BossCard />
+            </div>
           </div>
         </div>
-        ​
-      </div>
+        </div>
     );
   }
 }
