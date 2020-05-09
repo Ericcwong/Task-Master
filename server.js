@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 
 
-  db = "mongodb://project3:password1@ds113736.mlab.com:13736/heroku_96zb71pm";
+  db = process.env.DB;
 
 // Connect to MongoDB
 mongoose
