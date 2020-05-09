@@ -4,9 +4,14 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import Navbar from "../layout/Navbar";
 import "materialize-css/dist/css/materialize.min.css";
-import axios from "axios"
-import AddCharacter from "../cards/AddCharacter";
-import UserCard from "../cards/UserCard";
+
+// import M from "materialize-css";
+// import axios from "axios";
+import AddCharacter from "../cards/AddCharacter"
+import UserCard from "../cards/UserCard"
+import BossCard from "../cards/BossCard";
+// import AddCharacter from "../cards/AddCharacter";
+
 class Dashboard extends Component {
   state = {
     loading: true,
@@ -71,10 +76,11 @@ class Dashboard extends Component {
                 </div>
               )}
             </div>
+            <div className="col s6">
+              <BossCard />
+            </div>
           </div>
         </div>
-        ​
-      </div>
     );
   }
 }
