@@ -14,7 +14,7 @@ const User = require("../../models/User");
 // @route POST api/users/register
 // @desc Register user
 // @access Public
-router.post("/register", (req, res) => {
+router.post("/api/users/register", (req, res) => {
   // Form validation
   const { errors, isValid } = validateRegisterInput(req.body);
   // Check validation
@@ -48,7 +48,7 @@ router.post("/register", (req, res) => {
 // @route POST api/users/login
 // @desc Login user and return JWT token
 // @access Public
-router.post("/login", (req, res) => {
+router.post("/api/users/login", (req, res) => {
   // Form validation
   const { errors, isValid } = validateLoginInput(req.body);
   // Check validation
@@ -96,14 +96,14 @@ router.post("/login", (req, res) => {
 });
 //Root
 router.route("/")
-    .get(userController.findAll)
-    .post(userController.create);
+  .get(userController.findAll)
+  .post(userController.create);
 //Deleting and updating by ID
 router
-    .route("/:id")
-    .get(userController.findById)
-    .put(userController.update)
-    .delete(userController.remove);
+  .route("/:id")
+  .get(userController.findById)
+  .put(userController.update)
+  .delete(userController.remove);
 //Adds projects to user's projects array
 router
   .route("/:userId/projects")

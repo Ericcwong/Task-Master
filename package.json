@@ -11,7 +11,7 @@
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build --only=dev && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,7 @@
     "oauth": "^0.9.15",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-collapsible": "^2.7.0",
     "validator": "^13.0.0"
   },
   "devDependencies": {
