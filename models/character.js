@@ -49,5 +49,5 @@ const CharacterSchema = new Schema({
       default: Date.now
     }
 });
-
-module.exports = Character = mongoose.model("character", CharacterSchema)
+const Character = mongoose.model("character", CharacterSchema);
+module.exports = Character;

@@ -1,4 +1,21 @@
 # Task-Master
+This project was planned to use the MERN stack in order to track development tasks in a fun way. 
+We are using mongoDB to store five different kinds of data. We are storing info on users, teams, projects specific tasks and a users player characters. Using react we have built a robust front end that is letting a user log in to our app and view character that they have created. 
+
+# Why a task Tracker? 
+Over the course of out bootcamp expiriences we decided together that we wanted to make a game in order to track progress on a project. A game that is a fun way to get rewarded for finishing tasks that can easily become mundaine and repetitive. Well there isn't a better way to make repetative tasks fun than a JRPG! The style of our game involves a boss character that would represent a board on trello, as individuals on a team moves tasks through cards they would slowly but surely weaken the boss's health. 
+
+# Project status
+This project started with us wanting to build a task tracker ourselves and evolved into us attempting to integrate the trello Api into our game. The front end and our mongo Database is set up and working. We have working react components that are making API calls whithin them selves but they are not currently integrated into our Application. 
+
+# Screenshots 
+![login screen](readme/images/LoginPage.png)
+![sign up screen](readme/images/LoginPage2.png)
+![Home and character page](readme/images/CharacterPage.png)
+![Add a character](readme/images/AddCharcterDropDown.png)
+![Boss fight page](readme/images/BossPage.png)
+
+
 
 # Project collaborators
 

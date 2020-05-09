@@ -9,24 +9,25 @@ const cors = require("cors");
 // File calls
 const users = require("./routes/api/users");
 const routes = require("./routes");
+// const trello = require("./routes/api/trello");
 const app = express();
+var OAuth = require('oauth').OAuth
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
 app.use(cors());
-app.use(
-  bodyParser.urlencoded({
-    extended: false,
-  })
-);
-app.use(bodyParser.json());
-let db = require("./config/keys").mongoURI;
-if (process.env.NODE_ENV === "production") {
-  db = process.env.MONGODB_URI;
-} else {
-  // DB Config
-  db = require("./config/keys").mongoURI;
-}
+// app.use(
+//   bodyParser.urlencoded({
+//     extended: false,
+//   })
+// );
+// app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
+
+
+  db = process.env.DB;
+
 // Connect to MongoDB
 mongoose
   .connect(db, {
@@ -44,7 +45,9 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // Routes
+
 app.use("/api/users", users);
+// app.use("/api/trello", trello);
 app.use(routes);
 //app.use("/api/tasks", tasks);
 //app.use("/api/projects", projects);
@@ -66,6 +69,6 @@ if (process.env.NODE_ENV === "production") {
 //   .catch(err => console.log(err));
 
 // Start the API server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎  ==> API Server now listening on http://localhost:${PORT}`);
 });

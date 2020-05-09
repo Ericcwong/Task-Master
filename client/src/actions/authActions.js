@@ -8,11 +8,7 @@ export const registerUser = (userData, history) => dispatch => {
     .post("/api/users/register", userData)
     .then(res => history.push("/login")) // re-direct to login on successful register
     .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
+      console.log(err));
 };
 // Login - get user token
 export const loginUser = userData => dispatch => {
@@ -31,11 +27,7 @@ export const loginUser = userData => dispatch => {
       dispatch(setCurrentUser(decoded));
     })
     .catch(err =>
-      dispatch({
-        type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
+      console.log(err));
 };
 // Set logged in user
 export const setCurrentUser = decoded => {

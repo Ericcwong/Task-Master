@@ -3,6 +3,7 @@ import axios from "axios";
 import "./style.css";
 import "materialize-css/dist/css/materialize.min.css";
 import Collapsible from "react-collapsible";
+
 export default class AddCharacter extends Component {
   // Setting the component's initial state
   constructor(props) {
@@ -16,6 +17,7 @@ export default class AddCharacter extends Component {
       attackStat: 25,
     };
   }
+
   onChange = (event) => {
     this.setState({ [event.target.id]: event.target.value });
   };
@@ -42,12 +44,10 @@ export default class AddCharacter extends Component {
       };
       console.log(newCharacter);
       axios
-      .post(
-        "/api/user/" + this.props.userId + "/characters",
-        newCharacter
-      )
-      // axios.get("/api/user/"+ this.props.userId+"/characters")
-
+        .post(
+          "/api/user/" + this.props.userId + "/characters",
+          newCharacter
+        )
     }
   };
   render() {
@@ -79,7 +79,6 @@ export default class AddCharacter extends Component {
             type="text"
             placeholder="Class"
           />
-          {/* <button onClick={this.handleFormSubmit}>Submit</button> */}
           <button
             className="btn blue darken-4"
             onClick={this.handleFormSubmit}

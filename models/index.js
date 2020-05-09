@@ -1,7 +1,7 @@
 module.exports = {
-    User: require("./User"),
-    Task: require("./Task"),
-    Project: require("./Project"),
+    User: require("./user"),
+    Task: require("./task"),
+    Project: require("./project"),
     Character: require("./character"),
     Team: require("./team")
   };
